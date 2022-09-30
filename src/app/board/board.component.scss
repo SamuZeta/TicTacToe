@@ -1,0 +1,15 @@
+@use "@material/dialog";
+
+
+@include dialog.core-styles;
+
+main{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 5px;
+} 
+
+app-squares{
+    border: 1px grey solid;
+    height: 200px;
+}

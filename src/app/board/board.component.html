@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div class="col-4" style="margin-left: 10%;">
+         <h1>current player: {{ player }}</h1><br>
+         <h4 style="margin-top: 1px;">Last winner: {{lastWinner}}</h4><br>
+         <button Style="margin-right: 70px; margin-left: 70px" nbButton outline status="danger" (click)="newGameX()">Start new game</button>
+         <b>Start with:</b> 
+         <button style="margin-left: 10px" nbButton outline status="success" (click)="newGameX()">X</button>
+         <button style="margin-left: 5px" nbButton outline status="info" (click)="newGameO()">O</button><br><br><br>
+         <main>
+             <app-square *ngFor="let val of squares; 
+             let i = index" [value]="val" (click)="makeMove(i)"></app-square><br>
+        </main>
+    </div>
+    <div class="col-4" style="margin-left: 10%">
+        <button nbButton outline status="warning" (click)="resetWList()">Reset List</button>
+        <h1>Winners list: {{wList}}</h1>
+        <div *ngFor="let winner of wList; let i = index">
+            <span>{{i+1}}:</span>
+            <button style="margin-left: 0px" nbButton outline status="control">{{winner}}</button><br><br>
+        </div>
+    </div>
+</div>
